@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG娱乐 · 站点介绍与可信说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #ffd6a5 0%, #fbbf8c 40%, #f8a978 80%, #f39760 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+      color: #2b1e0f;
+    }
+
+    .page-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 245, 235, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 50px rgba(120, 60, 20, 0.18);
+    }
+
+    .main-card {
+      background: #fffbf7;
+      border-radius: 32px;
+      padding: 2.8rem 2.8rem 3rem;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(190, 110, 30, 0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-section h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(145deg, #a6531e, #c5753a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-section .subhead {
+      font-size: 1.1rem;
+      color: #6d4c2e;
+      background: #fae4d3;
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 470;
+      letter-spacing: 0.2px;
+    }
+
+    .intro-text {
+      font-size: 1.06rem;
+      max-width: 780px;
+      margin: 1.6rem auto 0.8rem;
+      color: #3f2c1b;
+    }
+
+    .intro-text a {
+      color: #bb6b2e;
+      font-weight: 540;
+      text-decoration: none;
+      padding-bottom: 1px;
+      border-bottom: 1.5px solid #e4b68a;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .intro-text a:hover {
+      border-bottom-color: #a65418;
+      color: #8c471a;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin: 2.8rem 0 2.5rem;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.6rem 1.6rem 1.8rem;
+      box-shadow: 0 4px 14px rgba(140, 80, 20, 0.04), 0 1px 4px rgba(0,0,0,0.03);
+      border: 1px solid #f6e5d8;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(160, 80, 20, 0.06);
+      border-color: #ebd2be;
+    }
+
+    .info-card .card-icon {
+      display: inline-block;
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+      color: #c97b40;
+    }
+
+    .info-card h3 {
+      font-size: 1.28rem;
+      font-weight: 590;
+      color: #3f2816;
+      margin: 0.4rem 0 0.6rem;
+    }
+
+    .info-card p {
+      font-size: 0.98rem;
+      color: #4d3724;
+      margin-bottom: 0.3rem;
+    }
+
+    .info-card .extra-tag {
+      display: inline-block;
+      background: #f3e0d1;
+      color: #6d4528;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 460;
+      margin-top: 0.5rem;
+    }
+
+    .audience-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.6rem 1.2rem;
+      background: #f7ede4;
+      padding: 1rem 1.6rem;
+      border-radius: 48px;
+      margin: 2rem 0 2.2rem;
+    }
+
+    .audience-row .label {
+      font-weight: 550;
+      color: #4b301d;
+      letter-spacing: 0.3px;
+    }
+
+    .audience-item {
+      background: #fffbf7;
+      padding: 0.15rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: #4f3420;
+      border: 1px solid #ddc6b4;
+    }
+
+    .faq-summary {
+      border-top: 1px solid #e8d5c6;
+      padding-top: 2rem;
+      margin-top: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem 2.5rem;
+    }
+
+    .faq-block {
+      flex: 1 1 220px;
+    }
+
+    .faq-block h4 {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: #442e1b;
+      margin-bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .faq-block h4::before {
+      content: "❓";
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-right: 2px;
+    }
+
+    .faq-block p {
+      font-size: 0.88rem;
+      color: #503b27;
+      line-height: 1.5;
+      margin-top: 0.1rem;
+    }
+
+    .natural-link-sentence {
+      background: #fbf1e9;
+      border-radius: 28px;
+      padding: 1.2rem 1.8rem;
+      margin: 2rem 0 0.6rem;
+      font-size: 1rem;
+      color: #302113;
+    }
+
+    .natural-link-sentence a {
+      color: #bb6b2e;
+      text-decoration: none;
+      font-weight: 570;
+      border-bottom: 1.5px solid #dbb28d;
+      transition: border-color 0.2s;
+    }
+
+    .natural-link-sentence a:hover {
+      border-bottom-color: #8a471a;
+      color: #8a471a;
+    }
+
+    .footer-note {
+      margin-top: 2.4rem;
+      font-size: 0.8rem;
+      color: #664f39;
+      text-align: center;
+      border-top: 1px dashed #dcc6b6;
+      padding-top: 1.2rem;
+      letter-spacing: 0.2px;
+    }
+
+    @media (max-width: 650px) {
+      .page-wrapper {
+        padding: 1rem 0.6rem;
+      }
+      .main-card {
+        padding: 1.8rem 1.2rem 2rem;
+        border-radius: 24px;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .card-grid {
+        gap: 1rem;
+      }
+      .faq-summary {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .audience-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.8rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-section h1 {
+        font-size: 1.7rem;
+      }
+      .main-card {
+        padding: 1.4rem 0.8rem 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="main-card">
+
+      <!-- hero -->
+      <div class="hero-section">
+        <h1>PG娱乐 · 安静角落</h1>
+        <div class="subhead">站点介绍与可信说明</div>
+        <div class="intro-text">
+          如果你是第一次听说 <a href="https://web-pgent.com">PG娱乐</a>，或者想重新认识这个在线站点，下面这些卡片与段落能帮你快速了解它的用途、场景、以及它更适合哪些人。
+        </div>
+      </div>
+
+      <!-- 信息卡片用途 -->
+      <div class="card-grid">
+        <div class="info-card">
+          <div class="card-icon">🎯</div>
+          <h3>主视觉 · 信息聚合</h3>
+          <p>网站围绕轻松娱乐主题，聚合了实用内容入口与轻量资讯，界面直观，适合快速浏览。</p>
+          <span class="extra-tag">简洁布局</span>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">🧩</div>
+          <h3>用途卡片 · 场景参考</h3>
+          <p>日常消遣、休闲探索、内容发现、工具索引 —— 不同板块满足不同兴趣方向。</p>
+          <span class="extra-tag">多用途</span>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">👥</div>
+          <h3>适合人群 · 自然匹配</h3>
+          <p>偏好轻量网页、想要换个风格浏览、对娱乐内容持开放态度的用户都能找到自己的节奏。</p>
+          <span class="extra-tag">无门槛</span>
+        </div>
+      </div>
+
+      <!-- 适合人群 显性行 -->
+      <div class="audience-row">
+        <span class="label">✨ 适合人群</span>
+        <span class="audience-item">内容探索者</span>
+        <span class="audience-item">日常休闲派</span>
+        <span class="audience-item">简洁界面控</span>
+        <span class="audience-item">多场景切换</span>
+        <span class="audience-item">信息轻食族</span>
+      </div>
+
+      <!-- 自然链接段落 融入句子 -->
+      <div class="natural-link-sentence">
+        📎 如果你对娱乐内容抱有平常心，不妨在闲暇时看看 <a href="https://web-pgent.com">PG娱乐</a> 汇集了哪些新鲜素材或实用板块，它本身就是一个安静的内容起点。
+      </div>
+
+      <!-- FAQ 摘要 + 可信说明 -->
+      <div class="faq-summary">
+        <div class="faq-block">
+          <h4>这个网站是做什么的？</h4>
+          <p>一个轻量内容聚合页，聚合了若干娱乐方向的信息入口与功能卡片，属于非常规的站点导航形态。</p>
+        </div>
+        <div class="faq-block">
+          <h4>内容可靠吗？</h4>
+          <p>站点运营者保持了基础的信息筛选与更新，但建议你自己判断每条内容的适用性，保持开放且理性的心态。</p>
+        </div>
+        <div class="faq-block">
+          <h4>适合什么节奏？</h4>
+          <p>适合碎片时间、无压力的浏览场景，不必一次性看完，也不需要注册或登录。</p>
+        </div>
+      </div>
+
+      <!-- 额外提示段落 风格自然 -->
+      <div style="margin: 1.6rem 0 0.4rem; font-size: 0.95rem; background: #fcf6f0; padding: 0.8rem 1.4rem; border-radius: 24px; color: #3c291a;">
+        💡 小提示：网站本身不涉及虚拟资产、充值或任何金融类操作，请留意个人信息安全，保持健康的网络习惯。
+      </div>
+
+      <!-- footer -->
+      <div class="footer-note">
+        PG娱乐 · 站点介绍 · 内容仅供参考，请自行分辨。
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
